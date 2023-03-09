@@ -1,15 +1,63 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './Routes/Home';
+import Game from './Routes/Game';
+import Cart from './Routes/Cart';
+import Dispense from './Routes/Dispense';
+import Thanks from './Routes/Thanks';
+import Payment from './Routes/Payment';
+import Info from './Routes/Info';
+import Products from './Routes/Products';
+import ProductDetails from './Routes/ProductDetails';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element:<Home />,
+  },
+  {
+    path: "/Game",
+    element: <Game />
+  },
+  {
+    path: "/Cart",
+    element: <Cart />
+  },
+  {
+    path: "/Dispense",
+    element: <Dispense />
+  },
+  {
+    path: "/Info",
+    element: <Info />
+  },
+  {
+    path: "/Payment",
+    element: <Payment />
+  },
+  {
+    path: "/Products",
+    element: <Products />
+  },
+  {
+    path: "/Products/:productId",
+    element: <ProductDetails />
+  },
+  {
+    path: "/Thanks",
+    element: <Thanks />
+  }
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
