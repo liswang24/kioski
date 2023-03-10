@@ -18,7 +18,7 @@ function Home() {
       >
         <Grid item>Discount Sticker</Grid>
         <Grid item>KIOSKI LOGO</Grid>
-        <Grid item><Button onClick={() => routeToPath(`Game`)} >Play Game</Button></Grid>
+        <Grid item><Button onClick={() => routeToPath(`Game/Instructions`)} >Play Game</Button></Grid>
         <Grid item><Button onClick={() => routeToPath(`Products`)} >Purchase</Button></Grid>
         <Grid item><Button onClick={() => routeToPath(`Info`)} startIcon={<QuestionMarkRoundedIcon />}>How it works</Button></Grid>
     </Grid>

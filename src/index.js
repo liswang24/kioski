@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './Routes/Home';
 import Game from './Routes/Game';
@@ -13,6 +12,7 @@ import Payment from './Routes/Payment';
 import Info from './Routes/Info';
 import Products from './Routes/Products';
 import ProductDetails from './Routes/ProductDetails';
+import GameInstructions from './Routes/GameInstructions';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/Game",
     element: <Game />
+  },
+  {
+    path: "/Game/Instructions",
+    element: <GameInstructions />
   },
   {
     path: "/Cart",
