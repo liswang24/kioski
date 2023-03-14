@@ -17,7 +17,7 @@ function ProductDetails() {
     let navigate = useNavigate();
 
     const routeToCart = () => {
-        navigate(`../Cart`, {state:{discount:discount}});
+        navigate(`../Cart`, {state:{prodId:productId, discount:discount}});
     }
 
     const routeToProducts = () => {

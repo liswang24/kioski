@@ -54,6 +54,10 @@ const router = createHashRouter([
     element: <ProductDetails />
   },
   {
+    path: "/Payment",
+    element: <Payment />
+  },
+  {
     path: "/Thanks",
     element: <Thanks />
   }
