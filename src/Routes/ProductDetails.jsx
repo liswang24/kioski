@@ -42,10 +42,10 @@ function ProductDetails() {
                 <h1>{thisProduct.name}</h1>
                 {/* <h2>{thisProduct.brand}</h2> */}
                 {discount ? 
-                    <>
-                        <p /*Crossed out*/>${thisProduct.price}</p>
-                        <p>${thisProduct.price * (discount/100)}</p>
-                    </> : <p>${thisProduct.price}</p>}
+                <>
+                  <p /*Crossed out*/>${thisProduct.price.toFixed(2)}</p>
+                  <p>${(thisProduct.price - (thisProduct.price * (discount/100))).toFixed(2)}</p>
+                </> : <p>${thisProduct.price.toFixed(2)}</p>}
             </Grid>
             <Grid item>
                 <Box>

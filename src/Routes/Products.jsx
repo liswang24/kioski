@@ -28,7 +28,11 @@ function Products() {
             <CardContent>
               <Typography>{product.name}</Typography>
               {/* <Typography>{product.brand}</Typography> */}
-              <Typography>${product.price}</Typography>
+              {discount ? 
+                <>
+                  <p /*Crossed out*/>${product.price.toFixed(2)}</p>
+                  <p>${(product.price - (product.price * (discount/100))).toFixed(2)}</p>
+                </> : <p>${product.price.toFixed(2)}</p>}
             </CardContent>
           </CardActionArea>
         </Card>
@@ -43,7 +47,7 @@ function Products() {
           <Grid container>
             {products}
           </Grid>
-          <Button onClick={handleOpenConfirm}>Cancel</Button>
+          <Button onClick={ discount ? handleOpenConfirm : routeToHome }>Cancel</Button>
           <ConfirmModal open={openConfirm} handleClose={handleCloseConfirm} confirmAction ={routeToHome}/>
       </Grid>
     );
