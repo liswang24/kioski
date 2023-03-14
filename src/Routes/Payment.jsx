@@ -4,9 +4,13 @@ import { useNavigate } from 'react-router-dom';
 function Payment() {
   let navigate = useNavigate();
 
+  const routeToDispense = () => {
+    navigate(`../Dispense`);
+  }
+
   // On click, simulate successful payment
-  window.addEventListener('click', (event) => {
-    navigate(`../Dispense`)
+  document.addEventListener('mousedown', () => {
+    routeToDispense();
   })
 
   return (
