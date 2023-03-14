@@ -12,6 +12,8 @@ import Info from './Routes/Info';
 import Products from './Routes/Products';
 import ProductDetails from './Routes/ProductDetails';
 import GameInstructions from './Routes/GameInstructions';
+import { ThemeProvider } from '@mui/material';
+import { theme } from './Styles/theme';
 
 // Using HashRouter for gh-pages compatability 
 const router = createHashRouter([
@@ -59,6 +61,8 @@ const router = createHashRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 )
