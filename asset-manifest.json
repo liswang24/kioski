@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/kioski/static/css/main.722bac9d.css",
-    "main.js": "/kioski/static/js/main.7f5e9c8c.js",
+    "main.js": "/kioski/static/js/main.5c29b945.js",
     "index.html": "/kioski/index.html",
     "main.722bac9d.css.map": "/kioski/static/css/main.722bac9d.css.map",
-    "main.7f5e9c8c.js.map": "/kioski/static/js/main.7f5e9c8c.js.map"
+    "main.5c29b945.js.map": "/kioski/static/js/main.5c29b945.js.map"
   },
   "entrypoints": [
     "static/css/main.722bac9d.css",
-    "static/js/main.7f5e9c8c.js"
+    "static/js/main.5c29b945.js"
   ]
 }
