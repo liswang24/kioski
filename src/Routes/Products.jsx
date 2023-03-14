@@ -23,7 +23,7 @@ function Products() {
     return (
       <Grid item key={product.id}>
         <Card>
-          <CardActionArea component={RouterLink} to={`/products/${product.id}`}>
+          <CardActionArea component={RouterLink} to={`/products/${product.id}`} state={{ discount: discount }}>
             {/* <CardMedia /> */}
             <CardContent>
               <Typography>{product.name}</Typography>

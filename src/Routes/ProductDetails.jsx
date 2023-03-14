@@ -1,17 +1,27 @@
 import * as React from 'react';
-import { Button, Grid, Typography } from '@mui/material';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Box, Button, Grid, Tabs, Tab, Typography } from '@mui/material';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import productData from '../productData';
+import ProductCarousel from '../Components/ProductCarousel';
 
 function ProductDetails() {
+    const [tab, setTab] = React.useState('description');
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => { setTab(newValue)};
+
     const {productId} = useParams();
     const thisProduct = productData.find(prod => prod.id === productId);
 
+    const location = useLocation();
+    const discount = location.state === null ? 0 : location.state.discount;
+
     let navigate = useNavigate();
-    // TODO: pass price info etc -> do it similarly to product cards
+
     const routeToCart = () => {
-        let path = `../Cart`;
-        navigate(path);
+        navigate(`../Cart`, {state:{discount:discount}});
+    }
+
+    const routeToProducts = () => {
+        navigate('../Products', {state:{discount:discount}})
     }
     
     return (
@@ -20,22 +30,35 @@ function ProductDetails() {
             direction='column'
             >
             <Grid item container>
-                <Button>Back</Button>
+                <Button onClick={routeToProducts}>Back</Button>
                 <Typography>Product Details</Typography>
                 <Button onClick={routeToCart}>Purchase</Button>
             </Grid>
             <Grid item>
-                [Additional images carousel]
+                {/* TODO: Get from to productData */}
+                <ProductCarousel images={["Image1", "Image2", "Image3"]}/>
             </Grid>
             <Grid item>
                 <h1>{thisProduct.name}</h1>
                 {/* <h2>{thisProduct.brand}</h2> */}
-                <p>Price: ${thisProduct.price}</p>
+                {discount ? 
+                    <>
+                        <p /*Crossed out*/>${thisProduct.price}</p>
+                        <p>${thisProduct.price * (discount/100)}</p>
+                    </> : <p>${thisProduct.price}</p>}
             </Grid>
             <Grid item>
-                <p>[TOGGLE description/features]</p>
-                <p>{thisProduct.description}</p>
-                <p>{thisProduct.features}</p>
+                <Box>
+                    <Tabs
+                        value={tab}
+                        onChange={handleChange}
+                    >
+                        <Tab value="description" label = "Description" />
+                        <Tab value="features" label = "Features" />
+                    </Tabs>
+                    {tab === "description" && <p>{thisProduct.description}</p>}
+                    {tab === "features" && <p>{thisProduct.features}</p>}
+                </Box>
             </Grid>
         </Grid>
     );
