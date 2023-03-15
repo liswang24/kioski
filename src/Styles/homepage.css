@@ -1,0 +1,160 @@
+#dino {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    /* background-image: url();
+    background-image: 50px 50px; */
+    position: relative;
+    top: 150px;
+    animation: jump 1.0s linear infinite;
+}
+
+@keyframes jump {
+    0% {
+        top: 150px;
+    }
+
+    30% {
+        top: 130px;
+    }
+
+    50% {
+        top: 80px;
+    }
+
+    80% {
+        top: 130px;
+    }
+
+    100% {
+        top: 150px;
+    }
+}
+
+#cactus {
+    width: 40px;
+    height: 80px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+
+    background-color: green;
+    /* background-image: url();
+    background-size: 20px 40px; */
+
+    animation: block 6s infinite linear;
+}
+
+@keyframes block {
+    0% {
+        left: 500px;
+    }
+    100% {
+        left: -20px;
+    }
+}
+
+#cloud2 {
+    opacity: .8;
+    top: 560px;
+    left: 120%;
+    transform: scale(1.7);
+    animation: drift 50s;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+#cloud4 {
+    opacity: 0;
+    top: 800px;
+    left: 20%;
+    transform: scale(1.40);
+    animation: driftBg2 60s;
+    z-index: 0;
+}
+#cloud5 {
+    opacity: 0;
+    top:320px;
+    left: 90%;
+    transform: scale(1.40);
+    animation: driftBg3 90s;
+    z-index: 0;
+}
+#cloud6 {
+    opacity: .7;
+    top: 760px;
+    left: 120%;
+    transform: scale(1.4);
+    animation: drift 110s;
+    animation-iteration-count: infinite;
+    animation-delay: 11;
+    z-index: 0;
+}
+#cloud7 {
+    opacity: .8;
+    top: 400px;
+    left: 120%;
+    transform: scale(1.7);
+    animation: drift 45s;
+    animation-iteration-count: infinite;
+    animation-delay: 35s;
+    z-index: 1;
+}
+
+ .cloud {
+    position: absolute;
+    animation-timing-function: linear;
+}
+
+@keyframes drift {
+    from {
+        left: 120%;
+    }
+    to {
+        left: -25%;
+    }
+}
+
+@keyframes driftBg {
+    0% {
+        left: 50%;
+        opacity: 0
+    }
+    3% {
+        left: 48%;
+        opacity: .7
+    }
+    100% {
+        left: -25%;
+        opacity: .7;
+    }
+}
+
+@keyframes driftBg2 {
+    0% {
+        left: 20%;
+        opacity: 0
+    }
+    3% {
+        left: 19%;
+        opacity: .7
+    }
+    100% {
+        left: -25%;
+        opacity: .7;
+    }
+}
+
+@keyframes driftBg3 {
+    0% {
+        left: 90%;
+        opacity: 0
+    }
+    2% {
+        left: 88%;
+        opacity: .65
+    }
+    100% {
+        left: -25%;
+        opacity: .65;
+    }
+}

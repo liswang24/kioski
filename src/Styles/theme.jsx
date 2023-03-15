@@ -26,14 +26,14 @@ export const theme = createTheme({
         }
     },
     components: {
-        // TODO: hover states
         MuiButton: {
             styleOverrides: {
                 root: {
                     borderRadius: '25px',
                     backgroundColor: 'black',
                     color: 'white',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    boxShadow: "0px 4px 4px rgb(0,0,0,0.25)"
                 },
                 sizeLarge: {
                     fontSize: '36px',
