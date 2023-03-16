@@ -2,6 +2,9 @@ import { createTheme } from "@mui/material";
 
 export const theme = createTheme({
     palette: {
+        primary: {
+            main: '#000000'
+        },
         pink: {
             main: '#EC7E78'
         },
@@ -23,6 +26,12 @@ export const theme = createTheme({
         fontFamily: 'Raleway, Arial',
         h1: {
             fontSize: '100px'
+        },
+        body1: {
+            fontSize: '30px'
+        },
+        body2: {
+            fontSize: '24px'
         }
     },
     components: {
