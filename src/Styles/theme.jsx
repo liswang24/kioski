@@ -1,9 +1,14 @@
 import { createTheme } from "@mui/material";
+import "@fontsource/montserrat";
+import "@fontsource/palanquin";
 
 export const theme = createTheme({
     palette: {
         primary: {
             main: '#000000'
+        },
+        secondary: {
+            main: '#FFFFFF'
         },
         pink: {
             main: '#EC7E78'
@@ -22,10 +27,26 @@ export const theme = createTheme({
         }
     },
     typography: {
-        // TODO: import fonts
-        fontFamily: 'Raleway, Arial',
+        fontFamily: 'Montserrat',
         h1: {
             fontSize: '100px'
+        },
+        h2: {
+            fontSize: '60px',
+            fontWeight: '800'
+        },
+        h3: {
+            fontSize: '38px',
+            fontWeight: '800'
+        },
+        h4: {
+            fontSize: '34px',
+            fontWeight: '700'
+        },
+        h5: {
+            color: 'rgb(0,0,0,0.6)',
+            fontSize: '30px',
+            fontFamily: 'Palanquin'
         },
         body1: {
             fontSize: '30px'
@@ -49,10 +70,21 @@ export const theme = createTheme({
                     height: '83px',
                     width: '440px'
                 },
+                sizeMedium: {
+                    fontSize: '26px',
+                    height: '64px',
+                    padding: '20px 40px',
+                    textTransform: 'unset'
+                },
                 sizeSmall: {
                     fontSize: '24px',
                     height: '59px',
                     width: '234px'
+                },
+                containedSecondary: {
+                    color: '#000000',
+                    backgroundColor: 'rgb(0,0,0,0)',
+                    boxShadow: 'none'
                 }
             }
         }

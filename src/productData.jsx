@@ -13,17 +13,17 @@ export default [
       ],
       price: 24,
       images: [
-        '../Assets/Products/chrome-dino/chrome-dino-1.png',
-        '../Assets/Products/chrome-dino/chrome-dino-2.jpg', 
-        '../Assets/Products/chrome-dino/chrome-dino-3.webp',
-        '../Assets/Products/chrome-dino/chrome-dino-4.jpg',
-        '../Assets/Products/chrome-dino/chrome-dino-5.jpg',
-        '../Assets/Products/chrome-dino/chrome-dino-6.jpg'
+        'chrome-dino/chrome-dino-1.png',
+        'chrome-dino/chrome-dino-2.jpg', 
+        'chrome-dino/chrome-dino-3.webp',
+        'chrome-dino/chrome-dino-4.jpg',
+        'chrome-dino/chrome-dino-5.jpg',
+        'chrome-dino/chrome-dino-6.jpg'
       ]
     },
     {
       id: "2",
-      name: "Chrome Dino Set Dark Mode",
+      name: "Chrome Dino Set (Dark)",
       brand: "Dyzplastic",
       description:
         "If you've ever lost internet while using Chrome you may have been introduced to the pixelly prehistoric cacti-hopping pterodactyl-dodging adventures of the Chrome Dino.",
@@ -35,12 +35,12 @@ export default [
       ],
       price: 24,
       images: [
-        '../Assets/Products/chrome-dino-dark/chrome-dino-dark-1.png',
-        '../Assets/Products/chrome-dino-dark/chrome-dino-dark-2.webp', 
-        '../Assets/Products/chrome-dino-dark/chrome-dino-dark-3.webp',
-        '../Assets/Products/chrome-dino-dark/chrome-dino-dark-4.webp',
-        '../Assets/Products/chrome-dino-dark/chrome-dino-dark-5.jpg',
-        '../Assets/Products/chrome-dino-dark/chrome-dino-dark-6.jpg'
+        'chrome-dino-dark/chrome-dino-dark-1.png',
+        'chrome-dino-dark/chrome-dino-dark-2.webp', 
+        'chrome-dino-dark/chrome-dino-dark-3.webp',
+        'chrome-dino-dark/chrome-dino-dark-4.webp',
+        'chrome-dino-dark/chrome-dino-dark-5.jpg',
+        'chrome-dino-dark/chrome-dino-dark-6.jpg'
       ]
     },
     {
@@ -57,11 +57,11 @@ export default [
       ],
       price: 22,
       images: [
-        '../Assets/Products/happy-little-dino/hld-1.png',
-        '../Assets/Products/happy-little-dino/hld-2.png',
-        '../Assets/Products/happy-little-dino/hld-3.jpg',
-        '../Assets/Products/happy-little-dino/hld-4.jpg',
-        '../Assets/Products/happy-little-dino/hld-5.jpg',
+        'happy-little-dino/hld-1.png',
+        'happy-little-dino/hld-2.png',
+        'happy-little-dino/hld-3.jpg',
+        'happy-little-dino/hld-4.jpg',
+        'happy-little-dino/hld-5.jpg',
       ]
     },
     {
@@ -79,17 +79,17 @@ export default [
       ],
       price: 30,
       images: [
-        '../Assets/Products/mega-dino/mega-dino-1.png',
-        '../Assets/Products/mega-dino/mega-dino-2.webp',
-        '../Assets/Products/mega-dino/mega-dino-3.webp',
-        '../Assets/Products/mega-dino/mega-dino-4.webp',
-        '../Assets/Products/mega-dino/mega-dino-5.webp',
-        '../Assets/Products/mega-dino/mega-dino-6.webp'
+        'mega-dino/mega-dino-1.png',
+        'mega-dino/mega-dino-2.webp',
+        'mega-dino/mega-dino-3.webp',
+        'mega-dino/mega-dino-4.webp',
+        'mega-dino/mega-dino-5.webp',
+        'mega-dino/mega-dino-6.webp'
       ]
     },
     {
       id: "5",
-      name: "Land of Dinosaurs Puzzle",
+      name: "Land of Dinos Puzzle",
       brand: "eeBoo",
       description:
         "Puzzles are a wonderful activity for young children that requires, careful observation, spacial reasoning and patience.  Piecing together a puzzle develops familiarity with pattern, shape, and color recognition. Children are challenged by the task and gifted confidence by the puzzles completion!",
@@ -102,16 +102,16 @@ export default [
       ],
       price: 20,
       images: [
-        '../Assets/Products/dino-puzzle/puzzle-1.png',
-        '../Assets/Products/dino-puzzle/puzzle-2.jpg',
-        '../Assets/Products/dino-puzzle/puzzle-3.jpg',
-        '../Assets/Products/dino-puzzle/puzzle-4.jpg',
-        '../Assets/Products/dino-puzzle/puzzle-5.jpg'
+        'dino-puzzle/puzzle-1.png',
+        'dino-puzzle/puzzle-2.jpg',
+        'dino-puzzle/puzzle-3.jpg',
+        'dino-puzzle/puzzle-4.jpg',
+        'dino-puzzle/puzzle-5.jpg'
       ]
     },
     {
       id: "6",
-      name: "Inflatable Dinosour Costume",
+      name: "Inflatable Dino Costume",
       brand: "Rubie's",
       description:
         "T-rex inflatable full-body costume(w/open face), w gloves ( sound component in gloves) w battery operated fan (batteries not included). You're never to old - or to young - to have fun dressing up!",
@@ -124,11 +124,11 @@ export default [
       ],
       price: 45,
       images: [
-        '../Assets/Products/costume/costume-1.png',
-        '../Assets/Products/costume/costume-2.jpg',
-        '../Assets/Products/costume/costume-3.jpg',
-        '../Assets/Products/costume/costume-4.jpg',
-        '../Assets/Products/costume/costume-5.jpg'
+        'costume/costume-1.png',
+        'costume/costume-2.jpg',
+        'costume/costume-3.jpg',
+        'costume/costume-4.jpg',
+        'costume/costume-5.jpg'
       ]
     }
   ];
