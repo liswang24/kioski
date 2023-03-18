@@ -6,7 +6,7 @@ import {ReactComponent as DiscountSticker} from '../Assets/discount-sticker.svg'
 import {ReactComponent as Ground} from '../Assets/Game/game-ground.svg'
 import {ReactComponent as Cloud} from '../Assets/Game/game-cloud.svg'
 import Logo from '../Assets/Logo.png'
-import '../Styles/homepage.css';
+import '../Styles/game-background.css';
 
 function Home() {
   let navigate = useNavigate();
@@ -122,8 +122,7 @@ function Home() {
           xs={2}
           zIndex='5'
         >
-          {/* TODO: Implement characters */}
-          <div id="dino"></div>
+          <div id="dino" className="dino-background"></div>
           <div id="cactus"></div>
         </Grid>
         <Grid

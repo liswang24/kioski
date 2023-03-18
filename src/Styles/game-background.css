@@ -1,57 +1,5 @@
-#dino {
-    width: 100px;
-    height: 100px;
-    background-color: black;
-    /* background-image: url();
-    background-image: 50px 50px; */
-    position: relative;
-    top: 150px;
-    animation: jump 1.0s linear infinite;
-}
-
-@keyframes jump {
-    0% {
-        top: 150px;
-    }
-
-    30% {
-        top: 130px;
-    }
-
-    50% {
-        top: 80px;
-    }
-
-    80% {
-        top: 130px;
-    }
-
-    100% {
-        top: 150px;
-    }
-}
-
-#cactus {
-    width: 40px;
-    height: 80px;
-    position: relative;
-    top: 110px;
-    left: 580px;
-
-    background-color: green;
-    /* background-image: url();
-    background-size: 20px 40px; */
-
-    animation: block 6s infinite linear;
-}
-
-@keyframes block {
-    0% {
-        left: 500px;
-    }
-    100% {
-        left: -20px;
-    }
+.dino-background {
+    animation: jump 1.4s linear infinite;
 }
 
 #cloud2 {
