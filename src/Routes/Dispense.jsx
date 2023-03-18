@@ -34,12 +34,11 @@ function Dispense() {
 
   let navigate = useNavigate();
 
-  const routeToThanks = () => {
-    let path = `../Thanks`
-    navigate(path);
-  }
-
-  setTimeout(routeToThanks, 10000);
+  React.useEffect(() => {
+    setTimeout(() => {
+      navigate('../Thanks')
+    }, 5000) //TODO: update time
+  }, [navigate])
 
     return (
       <Grid container justifyContent='center'>

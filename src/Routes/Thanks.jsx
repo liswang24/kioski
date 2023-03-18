@@ -4,12 +4,11 @@ import { useNavigate } from 'react-router-dom';
 function Thanks() {
   let navigate = useNavigate();
 
-  const routeToHome = () => {
-    let path = `/`
-    navigate(path);
-  }
-
-  setTimeout(routeToHome, 5000);
+  React.useEffect(() => {
+    setTimeout(() => {
+      navigate('/')
+    }, 2000)
+  }, [navigate])
 
   return (
     <>

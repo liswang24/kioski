@@ -6,14 +6,17 @@ import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 function Payment() {
   let navigate = useNavigate();
 
-  const routeToDispense = () => {
-    navigate(`../Dispense`);
-  }
+  React.useEffect(() => {
+    const routeToDispense = () => {
+      navigate(`../Dispense`);
+    }
 
-  // On click, simulate successful payment
-  document.addEventListener('mousedown', () => {
-    routeToDispense();
-  })
+    window.addEventListener('mousedown', routeToDispense);
+
+    return () => {
+      window.removeEventListener('mousedown', routeToDispense);
+    }
+  }, [navigate]);
 
   return (
     <>
