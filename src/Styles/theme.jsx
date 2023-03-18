@@ -63,7 +63,8 @@ export const theme = createTheme({
                     backgroundColor: 'black',
                     color: 'white',
                     fontWeight: 'bold',
-                    boxShadow: "0px 4px 4px rgb(0,0,0,0.25)"
+                    boxShadow: "0px 4px 4px rgb(0,0,0,0.25)",
+                    textTransform: 'unset'
                 },
                 sizeLarge: {
                     fontSize: '36px',
@@ -74,7 +75,6 @@ export const theme = createTheme({
                     fontSize: '26px',
                     height: '64px',
                     padding: '20px 30px',
-                    textTransform: 'unset'
                 },
                 sizeSmall: {
                     fontSize: '24px',
