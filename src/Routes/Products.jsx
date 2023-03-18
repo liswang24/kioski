@@ -78,7 +78,7 @@ function Products() {
           container
           backgroundColor='#FFFFFF'
           borderRadius='45px 45px 0px 0px'
-          height='1784px'
+          height='1796px'
           p={3}
           paddingTop={12}
         >

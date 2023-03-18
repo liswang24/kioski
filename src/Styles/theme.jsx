@@ -32,7 +32,7 @@ export const theme = createTheme({
             fontSize: '100px'
         },
         h2: {
-            fontSize: '60px',
+            fontSize: '50px',
             fontWeight: '800'
         },
         h3: {
@@ -40,7 +40,7 @@ export const theme = createTheme({
             fontWeight: '800'
         },
         h4: {
-            fontSize: '34px',
+            fontSize: '32px',
             fontWeight: '700'
         },
         h5: {
@@ -73,7 +73,7 @@ export const theme = createTheme({
                 sizeMedium: {
                     fontSize: '26px',
                     height: '64px',
-                    padding: '20px 40px',
+                    padding: '20px 30px',
                     textTransform: 'unset'
                 },
                 sizeSmall: {
@@ -86,6 +86,31 @@ export const theme = createTheme({
                     backgroundColor: 'rgb(0,0,0,0)',
                     boxShadow: 'none'
                 }
+            }
+        },
+        MuiTabs: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: 'rgb(0,0,0,0.1)',
+                    borderRadius: '30px'
+                },
+                indicator: {
+                    backgroundColor: 'transparent'
+                },
+            }
+        },
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    minWidth: '50%',
+                    textTransform:'none',
+                    fontSize: '30px',
+                    padding: '14px',
+                    "&.Mui-selected": {
+                        backgroundColor: '#AEDDF4',
+                        borderRadius: '25px'
+                      }
+                }  
             }
         }
     }
