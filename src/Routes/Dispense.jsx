@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Grid, Typography } from '@mui/material';
+import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 
 // Only have one available product to be dispensed
 function Dispense() {
@@ -8,7 +10,7 @@ function Dispense() {
   // Update the stock information on load
   React.useEffect(() => {
     updateStock();
-    setMsg("Dispensing Items...");
+    setMsg("Your purchase is being dispensed ...");
   },[])
 
   const updateStock = async () => {
@@ -40,10 +42,29 @@ function Dispense() {
   setTimeout(routeToThanks, 10000);
 
     return (
-      <>
-        <p>{msg}</p>
-        <p>Collect below</p>
-      </>
+      <Grid container justifyContent='center'>
+        <img
+          src={require('../Assets/machine-collect.png')}
+          alt='Indicate collection on machine'
+          width='60%'
+          style={{
+            margin: '160px'
+          }}
+        />
+        <Typography variant='h2' mt={10} mb={70}>{msg}</Typography>
+        <Grid item xs={12} container alignItems='center'>
+          <Grid item xs={3}>
+            <ArrowBackRoundedIcon
+              sx={(theme) => ({
+                transform: 'scale(10)',
+                color: theme.palette.green.main,
+                marginLeft: '100px',
+              })}
+            />
+          </Grid>
+          <Grid item xs={9}><Typography variant='h3'>Please collect your item from the collection slot.</Typography></Grid>
+        </Grid>
+      </Grid>
     );
   }
   
