@@ -1,4 +1,4 @@
-import { Box, Button, Modal, Typography } from '@mui/material';
+import { Box, Button, Grid, Modal, Typography } from '@mui/material';
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ConfirmModal from '../Components/ConfirmModal';
@@ -6,7 +6,7 @@ import '../Styles/game.css';
 
 // Adapted from "https://github.com/mdbootstrap/knowledge-base/tree/main/JS/games/dino-game"
 
-function Game() {
+function Game(props) {
   let navigate = useNavigate();
 
   const routeToPath = (path) => {
@@ -23,6 +23,7 @@ function Game() {
   const [startGame, setStartGame] = React.useState(false);
   const [confirmReset, setConfirmReset] = React.useState(false);
   const [confirmHome, setConfirmHome] = React.useState(false);
+  const [hideInstructions, setInstructions] = React.useState(localStorage.getItem('hideInstructions'))
 
   const handleTap = event => {
     if (!jump) {
@@ -34,12 +35,14 @@ function Game() {
   }
 
   const handleStart = () => setStartGame(true);
+  const handleCloseInstructions = () => setInstructions(true);
   const handleOpenConfirmReset = () => setConfirmReset(true);
   const handleCancelReset = () => setConfirmReset(false);
   const handleOpenConfirmHome = () => setConfirmHome(true);
   const handleCancelHome = () => setConfirmHome(false);
 
   const resetGame = () => {
+    localStorage.setItem('hideInstructions', hideInstructions)
     window.location.reload();
   }
 
@@ -66,12 +69,64 @@ function Game() {
     <>
       <Modal
         open={!startGame}
-        onClose={handleStart}
+        onClose={!hideInstructions ? '' : handleStart}
       >
+        { !hideInstructions ? 
+          <Box 
+            border='solid black'
+            borderRadius='25px'
+            backgroundColor='white'
+            width='800px'
+            margin='auto'
+            mt={60}
+            p={8}
+          >
+            <Typography variant='h2' sx={(theme)=>({color:theme.palette.pink.main})}>Instructions</Typography>
+            <Typography>
+              <ol>
+                <li>Tap anywhere on the screen to start the game</li>
+                <li>Tap anywhere to make your dino jump.</li>
+                <li>Avoid hitting the cactus to survive.</li>
+                <li>The higher your score, the greater the discount you will get!
+                  <ul style={{marginTop: '20px'}}>
+                    <li>TODO:score = 20% off</li>
+                    <li>TODO:score = 15% off</li>
+                    <li>TODO:score = 10% off</li>
+                    <li>TODO:score = 5% off</li>
+                    <li>Less than TODO:score = No discount</li>
+                  </ul>
+                </li>
+              </ol>
+            </Typography>
+            <Grid container direction='column'>
+              <Button 
+                size='large'
+                onClick={handleCloseInstructions}
+                sx={(theme) => ({
+                  backgroundColor: theme.palette.green.main,
+                  color: 'black',
+                  margin: '40px auto 30px'
+                })}
+              >
+                Play Game
+              </Button>
+              <Button 
+                size='medium' 
+                onClick={()=>(routeToPath('../'))}
+                sx={(theme) => ({
+                  backgroundColor: 'rgb(0,0,0,0.3)',
+                  width: '240px',
+                  margin: 'auto'
+                })}
+              >
+                Return Home
+              </Button>
+            </Grid>
+        </Box> :
         <Box>
-          <p>Tap to start</p>
-          {/* TODO: Potentially add button back to instructions */}
+        <p>Tap to start</p>
         </Box>
+      }
       </Modal>
       {/* TODO: Clouds for visual flair */}
       {(score >= 10) && 

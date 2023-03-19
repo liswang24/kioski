@@ -80,7 +80,7 @@ function Home() {
           <Grid item>
             <Button 
               size='large' 
-              onClick={() => routeToPath(`Game/Instructions`)}
+              onClick={() => routeToPath(`Game`)}
               sx={(theme) => ({
                 backgroundColor: theme.palette.pink.main
               })}

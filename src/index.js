@@ -11,7 +11,6 @@ import Payment from './Routes/Payment';
 import Info from './Routes/Info';
 import Products from './Routes/Products';
 import ProductDetails from './Routes/ProductDetails';
-import GameInstructions from './Routes/GameInstructions';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './Styles/theme';
 
@@ -24,10 +23,6 @@ const router = createHashRouter([
   {
     path: "/Game",
     element: <Game />
-  },
-  {
-    path: "/Game/Instructions",
-    element: <GameInstructions />
   },
   {
     path: "/Cart",
