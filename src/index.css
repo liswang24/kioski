@@ -1,3 +1,5 @@
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +12,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#game-font {
+  font-family: 'Press Start 2P';
 }

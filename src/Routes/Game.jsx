@@ -70,13 +70,25 @@ function Game(props) {
     <>
       <Modal
         open={!startGame}
-        onClose={showInstructions ? (hideInstructions=='true' ? handleStart : '') : handleStart}
+        onClose={showInstructions ? (hideInstructions==='true' ? handleStart : '') : handleStart}
       >
         <>
           <Box 
-            display={showInstructions ? (hideInstructions=='true' ? '' : 'none') : ''}
+            display={showInstructions ? (hideInstructions==='true' ? '' : 'none') : ''}
           >
-            <p>Tap to start</p>
+            <Typography 
+              id='game-font' 
+              width='100%'
+              align='center'
+              mt={100}
+              sx={{
+                fontSize: '60px', 
+                color: 'white',
+                textShadow: '-4px 0 black, 0 4px black, 4px 0 black, 0 -4px black'
+              }}
+            >
+              Tap to start
+            </Typography>
           </Box> 
           <Box 
             border='solid black'
@@ -86,11 +98,9 @@ function Game(props) {
             margin='auto'
             mt={60}
             p={8}
-            display={showInstructions ? (hideInstructions=='true' ? 'none' : '') : 'none'}
+            display={showInstructions ? (hideInstructions==='true' ? 'none' : '') : 'none'}
           >
-            <h1>{window.localStorage.getItem('hideInstructions')}</h1>
-            <Button onClick={resetGame}>Manual Reload</Button>
-            <Typography variant='h2' sx={(theme)=>({color:theme.palette.pink.main})}>Instructions</Typography>
+            <Typography variant='h3' id='game-font' sx={(theme)=>({color:theme.palette.pink.main})}>Instructions</Typography>
             <Typography>
               <ol>
                 <li>Tap anywhere on the screen to start the game</li>
