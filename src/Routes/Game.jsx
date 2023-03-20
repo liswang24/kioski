@@ -23,7 +23,8 @@ function Game(props) {
   const [startGame, setStartGame] = React.useState(false);
   const [confirmReset, setConfirmReset] = React.useState(false);
   const [confirmHome, setConfirmHome] = React.useState(false);
-  const [hideInstructions, setInstructions] = React.useState(localStorage.getItem('hideInstructions'))
+  const hideInstructions = window.localStorage.getItem('hideInstructions');
+  const [showInstructions, setShowInstructions] = React.useState(true);
 
   const handleTap = event => {
     if (!jump) {
@@ -35,14 +36,14 @@ function Game(props) {
   }
 
   const handleStart = () => setStartGame(true);
-  const handleCloseInstructions = () => setInstructions(true);
   const handleOpenConfirmReset = () => setConfirmReset(true);
   const handleCancelReset = () => setConfirmReset(false);
   const handleOpenConfirmHome = () => setConfirmHome(true);
   const handleCancelHome = () => setConfirmHome(false);
+  const handleCloseInstructions = () => setShowInstructions(false);
 
   const resetGame = () => {
-    localStorage.setItem('hideInstructions', hideInstructions)
+    window.localStorage.setItem('hideInstructions', true)
     window.location.reload();
   }
 
@@ -69,9 +70,14 @@ function Game(props) {
     <>
       <Modal
         open={!startGame}
-        onClose={!hideInstructions ? '' : handleStart}
+        onClose={showInstructions ? (hideInstructions=='true' ? handleStart : '') : handleStart}
       >
-        { !hideInstructions ? 
+        <>
+          <Box 
+            display={showInstructions ? (hideInstructions=='true' ? '' : 'none') : ''}
+          >
+            <p>Tap to start</p>
+          </Box> 
           <Box 
             border='solid black'
             borderRadius='25px'
@@ -80,7 +86,10 @@ function Game(props) {
             margin='auto'
             mt={60}
             p={8}
+            display={showInstructions ? (hideInstructions=='true' ? 'none' : '') : 'none'}
           >
+            <h1>{window.localStorage.getItem('hideInstructions')}</h1>
+            <Button onClick={resetGame}>Manual Reload</Button>
             <Typography variant='h2' sx={(theme)=>({color:theme.palette.pink.main})}>Instructions</Typography>
             <Typography>
               <ol>
@@ -122,11 +131,8 @@ function Game(props) {
                 Return Home
               </Button>
             </Grid>
-        </Box> :
-        <Box>
-        <p>Tap to start</p>
         </Box>
-      }
+      </>
       </Modal>
       {/* TODO: Clouds for visual flair */}
       {(score >= 10) && 

@@ -11,6 +11,10 @@ import '../Styles/game-background.css';
 function Home() {
   let navigate = useNavigate();
 
+  React.useEffect(() => {
+    window.localStorage.setItem('hideInstructions', false);
+  },[])
+
   const routeToPath = (path) => {
     navigate(path);
   }
