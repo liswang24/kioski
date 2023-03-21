@@ -37,7 +37,7 @@ function Dispense() {
   React.useEffect(() => {
     setTimeout(() => {
       navigate('../Thanks')
-    }, 5000) //TODO: update time
+    }, 10000)
   }, [navigate])
 
     return (

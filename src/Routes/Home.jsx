@@ -127,7 +127,7 @@ function Home() {
           zIndex='5'
         >
           <div id="dino" className="dino-background"></div>
-          <div id="cactus"></div>
+          <div id="cactus" className="cactus-background"></div>
         </Grid>
         <Grid
           xs={3} 

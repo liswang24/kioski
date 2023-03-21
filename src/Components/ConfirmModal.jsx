@@ -29,7 +29,7 @@ function ConfirmModal(props) {
             style={{width: '200px'}}
           />
           <Typography variant='h3' width="100%" mt={4}>Are you sure?</Typography>
-          <Typography mt={2}>Cancelling will remove any discounts you have acquired.</Typography>
+          <Typography mt={2}>This action will remove any discounts you have acquired.</Typography>
           <Grid container mt={4} spacing={4} justifyContent='center'>
             <Grid item>
               <Button 

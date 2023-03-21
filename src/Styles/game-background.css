@@ -1,5 +1,9 @@
 .dino-background {
-    animation: jump 1.4s linear infinite;
+    animation: jump 2s linear infinite;
+}
+
+.cactus-background {
+    animation: block 4s infinite linear;
 }
 
 #cloud2 {

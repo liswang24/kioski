@@ -3,6 +3,8 @@ import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ConfirmModal from '../Components/ConfirmModal';
 import '../Styles/game.css';
+import {ReactComponent as Ground} from '../Assets/Game/game-ground.svg'
+import {ReactComponent as Cloud} from '../Assets/Game/game-cloud.svg'
 
 // Adapted from "https://github.com/mdbootstrap/knowledge-base/tree/main/JS/games/dino-game"
 
@@ -27,11 +29,16 @@ function Game(props) {
   const [showInstructions, setShowInstructions] = React.useState(true);
 
   const handleTap = event => {
-    if (!jump) {
+    if (!jump && startGame) {
       setJump(true);
+      const cactusLocation = parseInt(window.getComputedStyle(document.getElementById("cactus")).getPropertyValue("left"));
+      
       setTimeout(function() {
         setJump(false);
-      }, 300);
+        if (cactusLocation > 40 && cactusLocation < 260) { 
+            setScore((prevScore) => prevScore + 1)
+        } 
+      }, 2000);
     }
   }
 
@@ -52,22 +59,28 @@ function Game(props) {
       let dinoTop = parseInt(window.getComputedStyle(document.getElementById("dino")).getPropertyValue("top"));
       let cactusLeft = parseInt(window.getComputedStyle(document.getElementById("cactus")).getPropertyValue("left"));
       
-      if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
-        // TODO: modify positions
+      if (cactusLeft < -40 && cactusLeft > -260 && dinoTop >= -24) {
         setGameOver(true);
-      }
-      else if (cactusLeft === -19) { //TODO: need to tweak
-        setScore((prevScore) => prevScore + 1);        
       }
     }, 10);
 
     return () => clearInterval(isAlive);
   }, []);
 
-  const getDiscount = (score) => score >= 30 ? 20 : score >= 20 ? 15 : 10;
+  const getDiscount = (score) => score >= 30 ? 20 : score >= 20 ? 15 : score >= 10 ? 10 : score >= 5 ? 5 : 0;
 
   return (
-    <>
+    <Grid
+      container 
+      alignItems="center"
+      direction="column"
+      height="1920px"
+      sx={(theme) => ({
+        backgroundColor: theme.palette.blue.main
+      })}
+      overflow='hidden'
+      onClick={handleTap}
+    >
       <Modal
         open={!startGame}
         onClose={showInstructions ? (hideInstructions==='true' ? handleStart : '') : handleStart}
@@ -108,11 +121,11 @@ function Game(props) {
                 <li>Avoid hitting the cactus to survive.</li>
                 <li>The higher your score, the greater the discount you will get!
                   <ul style={{marginTop: '20px'}}>
-                    <li>TODO:score = 20% off</li>
-                    <li>TODO:score = 15% off</li>
-                    <li>TODO:score = 10% off</li>
-                    <li>TODO:score = 5% off</li>
-                    <li>Less than TODO:score = No discount</li>
+                    <li>30 points = 20% off</li>
+                    <li>20 points = 15% off</li>
+                    <li>10 points = 10% off</li>
+                    <li>5 points = 5% off</li>
+                    <li>Less than 5 points = No discount</li>
                   </ul>
                 </li>
               </ol>
@@ -144,44 +157,136 @@ function Game(props) {
         </Box>
       </>
       </Modal>
-      {/* TODO: Clouds for visual flair */}
-      {(score >= 10) && 
-        <>
-          <Typography>Discount Unlocked:</Typography>
-          <Typography>{getDiscount(score)}%</Typography>
-        </>
-      }
-      <Typography>Score</Typography>
-      <Typography sx={(score === 10 || score === 20 || score === 30 )? {color: 'red'}: {}}>{score}</Typography>
+      <Grid
+          item
+          position='absolute'
+          container
+          overflow='hidden'
+          height='1400px'
+        > 
+          <div class="cloud" id="cloud2">
+            <Cloud/>
+          </div>
+          <div class="cloud" id="cloud4">
+            <Cloud/>
+          </div>
+          <div class="cloud" id="cloud5">
+            <Cloud/>
+          </div>
+          <div class="cloud" id="cloud6">
+            <Cloud/>
+          </div>
+          <div class="cloud" id="cloud7">
+            <Cloud/>
+          </div>
+        </Grid>
+        <Grid
+          item
+          container
+          xs={7}
+          p={4}
+          alignContent='start'
+        >
+          <Grid item container justifyContent='end' height='100px'>
+          {(score >= 5) && 
+            <Grid item direction='column'>
+              <Typography id='game-font' fontSize='20px'>Discount Unlocked:</Typography>
+              <Typography id='game-font' align='center'>{getDiscount(score)}%</Typography>
+            </Grid>
+          }
+          </Grid>
+          <Grid item container justifyContent='center' m={4}>
+            <Typography 
+              id='game-font'
+              sx={{
+                fontSize: '52px', 
+              }}
+            >
+              Score
+            </Typography>
+          </Grid>
+          <Grid item container justifyContent='center' 
+          >
+            <Typography
+              id='game-font'
+              sx={(theme) => ({
+                fontSize: '72px', 
+                color: `${(score === 5 || score === 10 || score === 20 || score === 30 ) ? theme.palette.yellow.main : 'white'}`,
+                textShadow: `-4px 0 black, 0 4px black, 4px 0 black, 0 -4px black ${(score===5 || score === 10 || score === 20 || score === 30 ) ? `,0px 0px 50px ${theme.palette.yellow.main}` : ''}`
+              })}
+            >{score}</Typography>
+          </Grid>
+        </Grid>
+        <Grid 
+          item 
+          container
+          xs={2}
+          zIndex='5'
+        >
+          <div id="dino" className={jump ? 'jump' : ''} style={{ animationPlayState: startGame && !gameOver ? 'running' : 'paused'}}></div>
+          <div id="cactus" className='cactus-game' style={{ animationPlayState: startGame && !gameOver ? 'running' : 'paused'}}>
+      </div>
+        </Grid>
+        <Grid
+          xs={3} 
+          item 
+          container
+          position='absolute'
+          bottom='0px'
+        >
+          <Ground 
+            width='100%'
+            height='100%'
+          />
+        </Grid>
       {gameOver && 
-        <Box>
-          <Typography>{score < 10 ? 'GAME OVER' : 'CONGRATS'}</Typography>
-          {score < 10 ? <Typography>You did not unlock any discounts</Typography> : <>
+        <Box
+          position='absolute'
+          left='0'
+          width= '100%'
+          height='1920px'
+          backgroundColor='rgb(0,0,0,0.5)'
+          justifyContent='center'
+          alignItems='center'
+          display='flex'
+          flexDirection='column'
+          zIndex={10}
+        >
+          <Typography id='game-font' 
+            sx={(theme) => ({
+              fontSize: '72px', 
+              color: 'white',
+              textShadow: `-4px 0 black, 0 4px black, 4px 0 black, 0 -4px black`
+            })}>{score < 5 ? 'GAME OVER' : 'CONGRATS'}</Typography>
+          {score < 5 ? <Typography>You did not unlock any discounts</Typography> : <>
             <Typography>You have unlocked</Typography>
-            <Typography>{getDiscount(score)}% off</Typography>
+            <Typography 
+              id='game-font'
+              sx={(theme) => ({
+                margin: '20px',
+                fontSize: '60px', 
+                color: 'white',
+                textShadow: `-4px 0 black, 0 4px black, 4px 0 black, 0 -4px black`
+              })}
+            >{getDiscount(score)}% off</Typography>
             <Typography>of your purchase</Typography>
           </>}
-          {score >= 10 && <Button onClick={routeToDiscountedProducts}>Use Discount</Button>}
-          <Button onClick={score >= 10 ? handleOpenConfirmReset: resetGame}>Play Again</Button>
+          {score >= 5 && <Button size='large' onClick={routeToDiscountedProducts} sx={(theme) => ({marginTop:'40px', backgroundColor: theme.palette.green.main, color: 'black'})}>Use Discount</Button>}
+          <Button size='large' onClick={score >= 5 ? handleOpenConfirmReset: resetGame} sx={(theme) => ({margin:'40px', backgroundColor: theme.palette.yellow.main, color: 'black'})}>Play Again</Button>
           <ConfirmModal
             open={confirmReset}
             handleClose={handleCancelReset}
             confirmAction={resetGame}
             />
-          <Button onClick={score >= 10 ? handleOpenConfirmHome : () => routeToPath(`../`)}>Home</Button>
+          <Button size='large' onClick={score >= 5 ? handleOpenConfirmHome : () => routeToPath(`../`)} sx={(theme) => ({backgroundColor: theme.palette.purple.main, color: 'black'})}>Home</Button>
           <ConfirmModal
             open={confirmHome}
             handleClose={handleCancelHome}
             confirmAction={() => routeToPath(`../`)}
             />
-         
         </Box>
       }
-      <div className="game" onClick={handleTap}>
-          <div id="dino" className={jump ? 'jump' : ''} style={{ animationPlayState: startGame && !gameOver ? 'running' : 'paused'}}></div>
-          <div id="cactus" style={{ animationPlayState: startGame && !gameOver ? 'running' : 'paused'}}></div>
-      </div>
-    </>
+    </Grid>
   );
 }
 
