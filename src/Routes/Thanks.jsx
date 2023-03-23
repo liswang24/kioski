@@ -12,7 +12,7 @@ function Thanks() {
   React.useEffect(() => {
     setTimeout(() => {
       navigate('/')
-    }, 5000)
+    }, 10000)
   }, [navigate])
 
   return (
@@ -25,6 +25,7 @@ function Thanks() {
         backgroundColor: theme.palette.blue.main
       })}
       overflow='hidden'
+      className='no-cursor'
       >
         <Grid
           item
@@ -52,10 +53,10 @@ function Thanks() {
         <Grid 
           item
           container
-          alignItems='end'
           pl={4}
           xs={3}
           zIndex='10'
+          pt={50}
         >
           <Typography variant='h2'>Thank you for using</Typography>
         </Grid>

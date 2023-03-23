@@ -11,7 +11,7 @@
 }
 
 .jump {
-    animation: jump 2.0s ease-in-out;
+    animation: jump 1.4s ease-in-out;
 }
 
 @keyframes jump {
@@ -31,11 +31,11 @@
 }
 
 .cactus-game {
-    animation: block, block, block;
-    animation-duration: 4s, 3s, 2s; 
-    animation-delay: 0s, 20s, 50s;
-    animation-iteration-count: infinite, infinite, infinite;
-    animation-timing-function: linear, linear, linear;
+    animation: block, block, block, block;
+    animation-duration: 3s, 2.5s, 2s, 1.5s; 
+    animation-delay: 0s, 15s, 30s, 60s;
+    animation-iteration-count: infinite, infinite, infinite, infinite;
+    animation-timing-function: linear, linear, linear, linear;
 }
 
 @keyframes block {

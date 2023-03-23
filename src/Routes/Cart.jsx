@@ -34,6 +34,7 @@ function Cart() {
         backgroundColor: theme.palette.purple.main
       })}
       overflow='hidden'
+      className='no-cursor'
     >
       <Grid item container justifyContent='space-between' alignItems='center' p={6} pl={1} pr={3}>
         <Button 
@@ -63,6 +64,7 @@ function Cart() {
         container 
         backgroundColor='#FFFFFF'
         borderRadius='45px 45px 0px 0px'
+        pb="67px"
       >
         <Grid item container p={4} mt={4}>
           <Typography variant='h2' width='100%' align='center'>Purchase Overview</Typography>

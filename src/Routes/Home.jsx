@@ -29,16 +29,22 @@ function Home() {
         backgroundColor: theme.palette.blue.main
       })}
       overflow='hidden'
+      className='no-cursor'
       >
         <Grid 
           item
           xs={3}
           container
-          justifyContent="end"
           padding={8}
           zIndex="5"
         >
-          <DiscountSticker height='100%' width='40%' />
+          <div style={{display: 'flex', paddingLeft: '600px'}}>
+            <DiscountSticker 
+              width='100%' 
+              height='400px'
+            />
+          </div>
+          
         </Grid>
         <Grid
           item

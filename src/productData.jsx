@@ -1,28 +1,6 @@
 export default [
     {
       id: "1",
-      name: "Chrome Dino Set",
-      brand: "Dyzplastic",
-      description: 
-        "We designed this set for Google to celebrate 10 years of the Chrome browser! If you've ever lost internet while using Chrome you may have been introduced to the pixelly prehistoric cacti-hopping, pterodactyl-dodging adventures of the Chrome Dino. Previously available exclusively within the company, we now have some sets for public sale!",
-      features: [
-        "The dinosaur figure measures 3 inches tall and about 3 inches long and 1 inch deep. Cacti vary between 2 inches and 3 inches tall",
-        "Box measures 10inches wide, 4 1/2 inches tall and 1 3/4 inches deep",
-        "Constructed of ABS plastic and acrylic",
-        "They come connected to base plates for stability, but can be removed if you want to create your own adventures"
-      ],
-      price: 24,
-      images: [
-        'chrome-dino/chrome-dino-1.png',
-        'chrome-dino/chrome-dino-2.jpg', 
-        'chrome-dino/chrome-dino-3.webp',
-        'chrome-dino/chrome-dino-4.jpg',
-        'chrome-dino/chrome-dino-5.jpg',
-        'chrome-dino/chrome-dino-6.jpg'
-      ]
-    },
-    {
-      id: "2",
       name: "Chrome Dino Set (Dark)",
       brand: "Dyzplastic",
       description:
@@ -41,6 +19,28 @@ export default [
         'chrome-dino-dark/chrome-dino-dark-4.webp',
         'chrome-dino-dark/chrome-dino-dark-5.jpg',
         'chrome-dino-dark/chrome-dino-dark-6.jpg'
+      ]
+    },
+    {
+      id: "2",
+      name: "Chrome Dino Set",
+      brand: "Dyzplastic",
+      description: 
+        "We designed this set for Google to celebrate 10 years of the Chrome browser! If you've ever lost internet while using Chrome you may have been introduced to the pixelly prehistoric cacti-hopping, pterodactyl-dodging adventures of the Chrome Dino. Previously available exclusively within the company, we now have some sets for public sale!",
+      features: [
+        "The dinosaur figure measures 3 inches tall and about 3 inches long and 1 inch deep. Cacti vary between 2 inches and 3 inches tall",
+        "Box measures 10inches wide, 4 1/2 inches tall and 1 3/4 inches deep",
+        "Constructed of ABS plastic and acrylic",
+        "They come connected to base plates for stability, but can be removed if you want to create your own adventures"
+      ],
+      price: 24,
+      images: [
+        'chrome-dino/chrome-dino-1.png',
+        'chrome-dino/chrome-dino-2.jpg', 
+        'chrome-dino/chrome-dino-3.webp',
+        'chrome-dino/chrome-dino-4.jpg',
+        'chrome-dino/chrome-dino-5.jpg',
+        'chrome-dino/chrome-dino-6.jpg'
       ]
     },
     {

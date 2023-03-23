@@ -60,6 +60,7 @@ function Products() {
           backgroundColor: theme.palette.pink.main
         })}
         overflow='hidden'
+        className='no-cursor'
       >
         <Button 
           variant="contained" 

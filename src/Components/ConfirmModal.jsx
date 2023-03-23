@@ -6,6 +6,7 @@ function ConfirmModal(props) {
     return (
       <Modal
         open={props.open}
+        className='no-cursor'
         >
         <Box
           p={6}

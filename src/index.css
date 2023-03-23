@@ -17,3 +17,7 @@ code {
 #game-font {
   font-family: 'Press Start 2P';
 }
+
+.no-cursor { 
+  cursor: none; 
+}

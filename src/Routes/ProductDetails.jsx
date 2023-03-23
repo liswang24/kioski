@@ -30,6 +30,7 @@ function ProductDetails() {
             container
             direction='column'
             p={6}
+            className='no-cursor'
         >
             <Grid item container justifyContent='space-between' mt={1} mb={8}>
                 <IconButton

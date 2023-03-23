@@ -41,7 +41,7 @@ function Dispense() {
   }, [navigate])
 
     return (
-      <Grid container justifyContent='center'>
+      <Grid container justifyContent='center' className='no-cursor'>
         <img
           src={require('../Assets/machine-collect.png')}
           alt='Indicate collection on machine'

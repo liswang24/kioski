@@ -19,7 +19,7 @@ function Payment() {
   }, [navigate]);
 
   return (
-    <>
+    <div className='no-cursor'>
       <ArrowUpwardRoundedIcon
         sx={(theme) => ({
           transform: 'scale(15)',
@@ -35,7 +35,7 @@ function Payment() {
         src={require('../Assets/payment.png')}
         alt='Payment device'
       />
-    </>
+    </div>
   );
 }
 

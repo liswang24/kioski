@@ -38,7 +38,7 @@ function Game(props) {
         if (cactusLocation > 40 && cactusLocation < 260) { 
             setScore((prevScore) => prevScore + 1)
         } 
-      }, 2000);
+      }, 1400);
     }
   }
 
@@ -80,6 +80,7 @@ function Game(props) {
       })}
       overflow='hidden'
       onClick={handleTap}
+      className='no-cursor'
     >
       <Modal
         open={!startGame}
@@ -187,7 +188,7 @@ function Game(props) {
           p={4}
           alignContent='start'
         >
-          <Grid item container justifyContent='end' height='100px'>
+          <Grid item container pl='650px' height='100px'>
           {(score >= 5) && 
             <Grid item direction='column'>
               <Typography id='game-font' fontSize='20px'>Discount Unlocked:</Typography>

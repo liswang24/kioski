@@ -24,8 +24,9 @@ function Info() {
         flexDirection='column'
         height='1856px'
         overflow='hidden'
+        className='no-cursor'
       >
-        <div style={{display:'flex', justifyContent:'end', marginBottom:'50px'}}>
+        <div style={{display:'flex', marginLeft:'980px', marginBottom:'50px'}}>
           <IconButton
             onClick={routeToHome}
             sx={{transform: 'scale(2.4)'}}

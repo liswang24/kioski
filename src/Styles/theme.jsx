@@ -64,7 +64,8 @@ export const theme = createTheme({
                     color: 'white',
                     fontWeight: 'bold',
                     boxShadow: "0px 4px 4px rgb(0,0,0,0.25)",
-                    textTransform: 'unset'
+                    textTransform: 'unset',
+                    cursor: 'none'
                 },
                 sizeLarge: {
                     fontSize: '36px',
