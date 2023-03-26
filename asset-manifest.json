@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/kioski/static/css/main.229bc208.css",
-    "main.js": "/kioski/static/js/main.8128f2f9.js",
+    "main.css": "/kioski/static/css/main.b9718961.css",
+    "main.js": "/kioski/static/js/main.ee18e169.js",
     "static/media/costume-1.png": "/kioski/static/media/costume-1.1a6a1e65d1c2cf31094e.png",
     "static/media/mega-dino-1.png": "/kioski/static/media/mega-dino-1.2d95924994e18b8a6998.png",
     "static/media/hld-2.png": "/kioski/static/media/hld-2.b632b8efbc64e2bdb6d4.png",
@@ -52,11 +52,11 @@
     "static/media/game-ground.svg": "/kioski/static/media/game-ground.a06aac40fce3fb71789feaad8d140226.svg",
     "static/media/game-cloud.svg": "/kioski/static/media/game-cloud.0ab000e2737c7bbc939b03a5ff68231d.svg",
     "index.html": "/kioski/index.html",
-    "main.229bc208.css.map": "/kioski/static/css/main.229bc208.css.map",
-    "main.8128f2f9.js.map": "/kioski/static/js/main.8128f2f9.js.map"
+    "main.b9718961.css.map": "/kioski/static/css/main.b9718961.css.map",
+    "main.ee18e169.js.map": "/kioski/static/js/main.ee18e169.js.map"
   },
   "entrypoints": [
-    "static/css/main.229bc208.css",
-    "static/js/main.8128f2f9.js"
+    "static/css/main.b9718961.css",
+    "static/js/main.ee18e169.js"
   ]
 }
