@@ -38,7 +38,7 @@ function Game(props) {
         if (cactusLocation > 40 && cactusLocation < 260) { 
             setScore((prevScore) => prevScore + 1)
         } 
-      }, 1400);
+      }, 1500);
     }
   }
 
@@ -67,7 +67,7 @@ function Game(props) {
     return () => clearInterval(isAlive);
   }, []);
 
-  const getDiscount = (score) => score >= 30 ? 20 : score >= 20 ? 15 : score >= 10 ? 10 : score >= 5 ? 5 : 0;
+  const getDiscount = (score) => score >= 30 ? 20 : score >= 20 ? 15 : score >= 10 ? 10 : score >= 3 ? 5 : 0;
 
   return (
     <Grid
@@ -125,8 +125,8 @@ function Game(props) {
                     <li>30 points = 20% off</li>
                     <li>20 points = 15% off</li>
                     <li>10 points = 10% off</li>
-                    <li>5 points = 5% off</li>
-                    <li>Less than 5 points = No discount</li>
+                    <li>3 points = 5% off</li>
+                    <li>Less than 3 points = No discount</li>
                   </ul>
                 </li>
               </ol>
@@ -189,7 +189,7 @@ function Game(props) {
           alignContent='start'
         >
           <Grid item container pl='650px' height='100px'>
-          {(score >= 5) && 
+          {(score >= 3) && 
             <Grid item direction='column'>
               <Typography id='game-font' fontSize='20px'>Discount Unlocked:</Typography>
               <Typography id='game-font' align='center'>{getDiscount(score)}%</Typography>
@@ -212,8 +212,8 @@ function Game(props) {
               id='game-font'
               sx={(theme) => ({
                 fontSize: '72px', 
-                color: `${(score === 5 || score === 10 || score === 20 || score === 30 ) ? theme.palette.yellow.main : 'white'}`,
-                textShadow: `-4px 0 black, 0 4px black, 4px 0 black, 0 -4px black ${(score===5 || score === 10 || score === 20 || score === 30 ) ? `,0px 0px 50px ${theme.palette.yellow.main}` : ''}`
+                color: `${(score === 3 || score === 10 || score === 20 || score === 30 ) ? theme.palette.yellow.main : 'white'}`,
+                textShadow: `-4px 0 black, 0 4px black, 4px 0 black, 0 -4px black ${(score===3 || score === 10 || score === 20 || score === 30 ) ? `,0px 0px 50px ${theme.palette.yellow.main}` : ''}`
               })}
             >{score}</Typography>
           </Grid>
@@ -258,8 +258,8 @@ function Game(props) {
               fontSize: '72px', 
               color: 'white',
               textShadow: `-4px 0 black, 0 4px black, 4px 0 black, 0 -4px black`
-            })}>{score < 5 ? 'GAME OVER' : 'CONGRATS'}</Typography>
-          {score < 5 ? <Typography>You did not unlock any discounts</Typography> : <>
+            })}>{score < 3 ? 'GAME OVER' : 'CONGRATS'}</Typography>
+          {score < 3 ? <Typography>You did not unlock any discounts</Typography> : <>
             <Typography>You have unlocked</Typography>
             <Typography 
               id='game-font'
@@ -272,14 +272,14 @@ function Game(props) {
             >{getDiscount(score)}% off</Typography>
             <Typography>of your purchase</Typography>
           </>}
-          {score >= 5 && <Button size='large' onClick={routeToDiscountedProducts} sx={(theme) => ({marginTop:'40px', backgroundColor: theme.palette.green.main, color: 'black'})}>Use Discount</Button>}
-          <Button size='large' onClick={score >= 5 ? handleOpenConfirmReset: resetGame} sx={(theme) => ({margin:'40px', backgroundColor: theme.palette.yellow.main, color: 'black'})}>Play Again</Button>
+          {score >= 3 && <Button size='large' onClick={routeToDiscountedProducts} sx={(theme) => ({marginTop:'40px', backgroundColor: theme.palette.green.main, color: 'black'})}>Use Discount</Button>}
+          <Button size='large' onClick={score >= 3 ? handleOpenConfirmReset: resetGame} sx={(theme) => ({margin:'40px', backgroundColor: theme.palette.yellow.main, color: 'black'})}>Play Again</Button>
           <ConfirmModal
             open={confirmReset}
             handleClose={handleCancelReset}
             confirmAction={resetGame}
             />
-          <Button size='large' onClick={score >= 5 ? handleOpenConfirmHome : () => routeToPath(`../`)} sx={(theme) => ({backgroundColor: theme.palette.purple.main, color: 'black'})}>Home</Button>
+          <Button size='large' onClick={score >= 3 ? handleOpenConfirmHome : () => routeToPath(`../`)} sx={(theme) => ({backgroundColor: theme.palette.purple.main, color: 'black'})}>Home</Button>
           <ConfirmModal
             open={confirmHome}
             handleClose={handleCancelHome}

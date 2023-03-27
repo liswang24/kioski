@@ -11,12 +11,12 @@
 }
 
 .jump {
-    animation: jump 1.4s ease-in-out;
+    animation: jump 1.5s ease-in-out;
 }
 
 @keyframes jump {
     0%      { top: 15% }
-    40%     { top: -70% }
+    30%     { top: -70% }
     100%    { top: 15% }
 }
 

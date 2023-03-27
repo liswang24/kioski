@@ -24,7 +24,7 @@ function Payment() {
         sx={(theme) => ({
           transform: 'scale(15)',
           color: theme.palette.green.main,
-          marginLeft: '800px',
+          marginLeft: '150px',
           marginTop: '140px'
         })}
       />
