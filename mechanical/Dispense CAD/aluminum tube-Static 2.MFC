@@ -1,0 +1,16 @@
+[StartTime]
+aluminum tube-Static 2.MFC=
+[SolverState]
+aluminum tube-Static 2.MFC=2
+[MainFrame]
+aluminum tube-Static 2.MFC=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPMMBAAAAAHCBAAAAAEDDAAAAAKPBAAAAA
+[ShowMin]
+aluminum tube-Static 2.MFC=No
+[SolverType]
+aluminum tube-Static 2.MFC=Linear Analysis
+[StudyType]
+aluminum tube-Static 2.MFC=0
+[StudyName]
+aluminum tube-Static 2.MFC=Static 2
+[Solver]
+aluminum tube-Static 2.MFC=Sparse
